@@ -1,0 +1,80 @@
+{
+  "dataset_name": "CIFAR-10",
+  "epsilon": 4.0,
+  "target_delta": 1e-05,
+  "projected_delta": 9.999988052266503e-06,
+  "achieved_delta": 9.999988052266503e-06,
+  "achieved_epsilon": 3.9999997337218196,
+  "train_size": 25000,
+  "batch_size": 256,
+  "sample_rate": 0.01024,
+  "target_steps": 9800,
+  "C_t": 1.0,
+  "sigma_small": 1.2819468975067139,
+  "sigma_large": 20.0,
+  "p_large": 0.04,
+  "mixpld_mode": "coin_aware",
+  "accountant": "coin_aware_pld",
+  "public_coin": true,
+  "pessimistic_estimate": true,
+  "use_connect_dots": true,
+  "pld_backend": "google_dp_accounting_public_coin",
+  "backend_distribution": "dp-accounting",
+  "backend_version": "0.5.1",
+  "value_discretization_interval": 0.0001,
+  "log_mass_truncation_bound": -50.0,
+  "tail_mass_truncation": 1e-15,
+  "large_step_update": "sgd_bypass_scaled",
+  "large_step_lr_scale": 0.1,
+  "sigma_tolerance": 1e-07,
+  "infeasible_sigma": 1.281946837902069,
+  "infeasible_delta": 1.0000001310338408e-05,
+  "solver_iterations": 24,
+  "solver_version": "isolated_paper_stepmix_coin_aware_pld_v3",
+  "diagnostics": {
+    "single_step_remove": {
+      "size": 33703,
+      "lower_loss": -0.0103,
+      "upper_loss": 3.3599,
+      "finite_mass": 1.0000000000001348,
+      "infinity_mass": 6.906053977222062e-26,
+      "total_mass": 1.0000000000001348,
+      "absolute_mass_error": 1.34781075189494e-13
+    },
+    "single_step_add": {
+      "size": 33703,
+      "lower_loss": -3.3599,
+      "upper_loss": 0.0103,
+      "finite_mass": 1.000000010699909,
+      "infinity_mass": 4.015928852797434e-29,
+      "total_mass": 1.000000010699909,
+      "absolute_mass_error": 1.069990895885553e-08
+    },
+    "composed_remove": {
+      "size": 168095,
+      "lower_loss": -7.8407,
+      "upper_loss": 8.9687,
+      "finite_mass": 1.0000000013230301,
+      "infinity_mass": 1.0000006767932898e-15,
+      "total_mass": 1.0000000013230312,
+      "absolute_mass_error": 1.3230312401191213e-09
+    },
+    "composed_add": {
+      "size": 198352,
+      "lower_loss": -11.247200000000001,
+      "upper_loss": 8.587900000000001,
+      "finite_mass": 1.0001048646051454,
+      "infinity_mass": 1.000000000393561e-15,
+      "total_mass": 1.0001048646051465,
+      "absolute_mass_error": 0.00010486460514647078
+    }
+  },
+  "numerical_validation": {
+    "status": "passed",
+    "single_step_max_absolute_mass_error": 1.069990895885553e-08,
+    "composed_max_absolute_mass_error": 0.00010486460514647078,
+    "max_single_step_absolute_mass_error": 1e-06,
+    "max_composed_absolute_mass_error": 0.0005
+  },
+  "source": "Pessimistic Google dp-accounting PLDs for each Poisson-sampled Gaussian branch, mixed by the public data-independent branch probability before fixed-step self-composition."
+}

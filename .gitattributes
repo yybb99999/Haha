@@ -1,0 +1,6 @@
+# Historical source/certificate hashes are byte-sensitive, including CRLF.
+*.py -text
+*.json -text
+*.txt -text
+*.npy binary
+*.md text eol=lf

@@ -1,0 +1,78 @@
+{
+  "train": {
+    "C_t": 1.0,
+    "accountant": "rdp",
+    "algorithm": "DPSGD",
+    "audit_train_pool": "train",
+    "augmentation_mode": "weak",
+    "batch_size": 256,
+    "data_profile": "lira_minus_one_one",
+    "dataset_name": "CIFAR-10",
+    "delta": 1e-05,
+    "device": "cuda",
+    "dp_backend": "opacus",
+    "dp_normalization": "expected_batch",
+    "ema_decay": 0.999,
+    "epochs": 100,
+    "epsilon": 2.0,
+    "eval_batch_size": 1024,
+    "eval_every_epochs": 10,
+    "expected_train_size": 25000,
+    "lr": 0.05,
+    "lr_schedule": "lira_cosine_warmup",
+    "model_arch": "lira_cnn32_3_mean",
+    "momentum": 0.9,
+    "noise_mode": "gaussian",
+    "optimizer_name": "sgd_momentum",
+    "poisson_steps_per_epoch": "ceil",
+    "sampling_scheme": "poisson",
+    "sigma_t": 2.306369156756787,
+    "stop_rule": "fixed_steps",
+    "target_steps": 9800,
+    "training_mode": "paper_dp",
+    "weight_decay": 0.0005,
+    "weight_decay_scope": "weights_only_post_clip"
+  },
+  "export": {
+    "batch_size": 1024,
+    "candidate_pool": "train",
+    "device": "cuda",
+    "logits_subdir": "paper_queries_2",
+    "query_augmentations": [
+      "identity",
+      "hflip"
+    ]
+  },
+  "lira": {
+    "bootstrap_repeats": 2000,
+    "bootstrap_seed": 20260718,
+    "expected_k_refs": 8,
+    "min_out_references": 4,
+    "min_std": 1e-06,
+    "require_all_candidates_out": false,
+    "results_subdir": "results_paper_queries_2",
+    "score_modes": [
+      "official_logpdf_fixed",
+      "paper_tail_fixed"
+    ]
+  },
+  "target_seed": 95001,
+  "reference_seed_base": 95100,
+  "require_explicit_target_seed": true,
+  "require_privacy_certificate": true,
+  "lock_timeout_hours": 48,
+  "method": "gaussian",
+  "epsilon": 2,
+  "certificate_file": "cifar10_eps2_paper_gaussian_rdp.json",
+  "certificate_sha256": "3360a8e56735b5ccafde5c21bab0417c3ae381100f0b8933892bb27d7ec896e3",
+  "experiment_role": "formal_method_comparison",
+  "direct_comparison_allowed": true,
+  "force_target": false,
+  "force_unlock_stale": false,
+  "provenance": {
+    "source_group": "stepmix_pld_attack_eps2_v1_20260808",
+    "source_config": "cifar10_eps2_gaussian_rdp.json",
+    "source_config_sha256": "849e29992cb15ca2ab6613d42020a531e01fa6adb8b6791cb690a125886ea1c2",
+    "note": "Portable rerun template. Historical frozen-checkpoint metadata is not asserted for a fresh rerun."
+  }
+}

@@ -1,0 +1,21 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.*
+.idea/
+.vscode/
+outputs/
+attack/configs/local/
+utility/data/*
+!utility/data/util/
+!utility/data/util/**
+attack/data/*
+!attack/data/util/
+!attack/data/util/**
+*.pth
+*.pt
+*.ckpt
+*.log
+*.zip
+# Keep attack/splits/paper/*.npy: these small index arrays are required.

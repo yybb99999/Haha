@@ -1,0 +1,15 @@
+{
+  "dataset_name": "CIFAR-10",
+  "epsilon": 4.0,
+  "target_delta": 1e-05,
+  "achieved_epsilon": 3.999999999873419,
+  "train_size": 25000,
+  "batch_size": 256,
+  "sample_rate": 0.01024,
+  "target_steps": 9800,
+  "C_t": 1.0,
+  "sigma": 1.3725304116508457,
+  "accountant": "rdp",
+  "solver_version": "opacus_rdp_paper_comparison_v1",
+  "source": "Calibrated in the isolated paper reproduction project for a matched-budget Gaussian DP-SGD versus StepMix comparison."
+}

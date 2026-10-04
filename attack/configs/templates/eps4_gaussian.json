@@ -1,0 +1,78 @@
+{
+  "train": {
+    "C_t": 1.0,
+    "accountant": "rdp",
+    "algorithm": "DPSGD",
+    "audit_train_pool": "train",
+    "augmentation_mode": "weak",
+    "batch_size": 256,
+    "data_profile": "lira_minus_one_one",
+    "dataset_name": "CIFAR-10",
+    "delta": 1e-05,
+    "device": "cuda",
+    "dp_backend": "opacus",
+    "dp_normalization": "expected_batch",
+    "ema_decay": 0.999,
+    "epochs": 100,
+    "epsilon": 4.0,
+    "eval_batch_size": 1024,
+    "eval_every_epochs": 10,
+    "expected_train_size": 25000,
+    "lr": 0.1,
+    "lr_schedule": "lira_cosine_warmup",
+    "model_arch": "lira_cnn32_3_mean",
+    "momentum": 0.9,
+    "noise_mode": "gaussian",
+    "optimizer_name": "sgd_momentum",
+    "poisson_steps_per_epoch": "ceil",
+    "sampling_scheme": "poisson",
+    "sigma_t": 1.3725304116508457,
+    "stop_rule": "fixed_steps",
+    "target_steps": 9800,
+    "training_mode": "paper_dp",
+    "weight_decay": 0.0005,
+    "weight_decay_scope": "weights_only_post_clip"
+  },
+  "export": {
+    "batch_size": 1024,
+    "candidate_pool": "train",
+    "device": "cuda",
+    "logits_subdir": "paper_queries_2",
+    "query_augmentations": [
+      "identity",
+      "hflip"
+    ]
+  },
+  "lira": {
+    "bootstrap_repeats": 2000,
+    "bootstrap_seed": 20260718,
+    "expected_k_refs": 8,
+    "min_out_references": 4,
+    "min_std": 1e-06,
+    "require_all_candidates_out": false,
+    "results_subdir": "results_paper_queries_2",
+    "score_modes": [
+      "official_logpdf_fixed",
+      "paper_tail_fixed"
+    ]
+  },
+  "target_seed": 95001,
+  "reference_seed_base": 95100,
+  "require_explicit_target_seed": true,
+  "require_privacy_certificate": true,
+  "lock_timeout_hours": 48,
+  "method": "gaussian",
+  "epsilon": 4,
+  "certificate_file": "cifar10_eps4_paper_gaussian_rdp.json",
+  "certificate_sha256": "876fa5dfdde1011f8484414d18541be90c48eff486695d1373bba2d8448bcbff",
+  "experiment_role": "formal_method_comparison",
+  "direct_comparison_allowed": true,
+  "force_target": false,
+  "force_unlock_stale": false,
+  "provenance": {
+    "source_group": "paper_attack_audit_eps1_eps4_v1_20260731",
+    "source_config": "cifar10_eps4_gaussian.json",
+    "source_config_sha256": "65da9945fd426c149ead2325d4f7eec6364b121c8d2193b63414300aa269eaa8",
+    "note": "Portable rerun template. Historical frozen-checkpoint metadata is not asserted for a fresh rerun."
+  }
+}

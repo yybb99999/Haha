@@ -1,0 +1,16 @@
+absl-py==1.4.0
+attrs==23.2.0
+dm-tree==0.1.8
+dp-accounting==0.5.1
+keras==2.12.0
+kymatio==0.3.0
+matplotlib==3.7.1
+numpy==1.23.5
+opacus==1.6.0
+pandas==2.0.1
+scikit-learn==1.6.1
+scipy==1.10.1
+tensorflow==2.12.0
+torch==2.7.1
+torchvision==0.22.1
+transformers==4.30.2

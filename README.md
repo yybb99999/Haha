@@ -1,4 +1,4 @@
-# DP-BiSGD and DP-BiSGD-HF
+# Anonymous code
 
 This repository contains the main utility experiment code for DP-BiSGD and DP-BiSGD-HF, together with the Offline LiRA membership-inference audit code. The utility and attack experiments follow different training protocols, but share the unified dependency file in the repository root. Do not mix parameters between the two experiment protocols. All experiment parameters can be configured according to the paper.
 
